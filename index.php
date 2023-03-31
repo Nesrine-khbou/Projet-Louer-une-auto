@@ -94,10 +94,10 @@
                         Gestion Locations
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Afficher Locations </a></li>
-                            <li><a class="dropdown-item" href="#">Inserer Location</a></li>
-                            <li><a class="dropdown-item" href="#">Modifier Locations</a></li>
-                            <li><a class="dropdown-item" href="#">Supprimer Location</a></li>
+                            <li><a class="dropdown-item" href="affichageLocation.php">Afficher Locations </a></li>
+                            <li><a class="dropdown-item" href="formulaireLocation.php">Inserer Location</a></li>
+                            <li><a class="dropdown-item" href="formulaire_rechercheClientLocation.php">Recherche de clients</a></li>
+                            <li><a class="dropdown-item" href="formulaire_rechercheVoitureLocation.php">Recherche de voitures</a></li>
 
                         </ul>
                     </li>
