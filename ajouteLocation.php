@@ -83,48 +83,58 @@
         $date_rentree=$_POST["date_rentree"];
 
 
-        $sql="insert into locations(IdLocation,IdClient,immatriculation,DateDebut,DateFin,DateRentree) values('$IdLocation','$IdClient','$immat','$date_debut','$date_fin','$date_rentree')";
-        $cnx->exec($sql);
-        echo" <div id=\"succees\"> La location est ajoutee avec succees </div>";
-        //affichage de liste des locations apres ajout
-        $sql="select * from locations";
-        $locations=$cnx->query($sql)->fetchAll(PDO::FETCH_OBJ);
-        $i=sizeof($locations);
-
-        echo "<h1>Liste Des Locations</h1>";
-        echo " <table>
-        <tr class=\"dark\">
-        <th>IdLocation</th>
-        <th>IdClient</th>
-        <th>immatriculation</th>
-        <th>DateDebut</th>
-        <th>DateFin</th>
-        <th>DateRentree</th>
-        </tr>";
-        echo"<tr id=\"new\">
-        <th>".$locations[$i-1]->IdLocation."</th>
-        <th>".$locations[$i-1]->IdClient."</th>
-        <th>".$locations[$i-1]->immatriculation."</th>
-        <th>".$locations[$i-1]->DateDebut."</th>
-        <th>".$locations[$i-1]->DateFin."</th>
-        <th>".$locations[$i-1]->DateRentree."</th>
-
-        </tr>";
-        $x=0;
-        foreach ($locations as $location) {
-            if($x != $i-1){
-                echo"<tr>
-                <th>".$location->IdLocation."</th>
-                <th>".$location->IdClient."</th>
-                <th>".$location->immatriculation."</th>
-                <th>".$location->DateDebut."</th>
-                <th>".$location->DateFin."</th>
-                <th>".$location->DateRentree."</th>
-                </tr>";
-                $x+=1;
-            }
+        // Vérifier si la voiture est déjà louée pour la période sélectionnée  
+        $sql1 = "select * from locations where immatriculation = $immat AND (DateDebut>= '$date_debut' and DateFin <= '$date_fin')";
+        $locations1=$cnx->query($sql1)->fetchAll(PDO::FETCH_OBJ);
+        if(sizeof($locations1)>0){
+            echo" <div id=\"succees\"> Désolé, cette voiture n'est pas disponible pour la période sélectionnée. Veuillez choisir une autre voiture ou une autre période </div>";
         }
-        echo "</table>";
+        else {
+
+
+            $sql="insert into locations(IdLocation,IdClient,immatriculation,DateDebut,DateFin,DateRentree) values('$IdLocation','$IdClient','$immat','$date_debut','$date_fin','$date_rentree')";
+            $cnx->exec($sql);
+            echo" <div id=\"succees\"> La location est ajoutee avec succees </div>";
+            //affichage de liste des locations apres ajout
+            $sql="select * from locations";
+            $locations=$cnx->query($sql)->fetchAll(PDO::FETCH_OBJ);
+            $i=sizeof($locations);
+
+            echo "<h1>Liste Des Locations</h1>";
+            echo " <table>
+            <tr class=\"dark\">
+            <th>IdLocation</th>
+            <th>IdClient</th>
+            <th>immatriculation</th>
+            <th>DateDebut</th>
+            <th>DateFin</th>
+            <th>DateRentree</th>
+            </tr>";
+            echo"<tr id=\"new\">
+            <th>".$locations[$i-1]->IdLocation."</th>
+            <th>".$locations[$i-1]->IdClient."</th>
+            <th>".$locations[$i-1]->immatriculation."</th>
+            <th>".$locations[$i-1]->DateDebut."</th>
+            <th>".$locations[$i-1]->DateFin."</th>
+            <th>".$locations[$i-1]->DateRentree."</th>
+
+            </tr>";
+            $x=0;
+            foreach ($locations as $location) {
+                if($x != $i-1){
+                    echo"<tr>
+                    <th>".$location->IdLocation."</th>
+                    <th>".$location->IdClient."</th>
+                    <th>".$location->immatriculation."</th>
+                    <th>".$location->DateDebut."</th>
+                    <th>".$location->DateFin."</th>
+                    <th>".$location->DateRentree."</th>
+                    </tr>";
+                    $x+=1;
+                }
+            }
+            echo "</table>";
+        }
     }
     ?>
 </body>

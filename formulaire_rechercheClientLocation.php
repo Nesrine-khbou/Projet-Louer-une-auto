@@ -114,7 +114,7 @@
 
 
             <section>
-                <button type="submit" name="ajouter">Submit</button>
+            <center> <button type="submit" name="ajouter">Submit</button></center>
             </section>
         </form>
     </main>

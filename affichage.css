@@ -53,3 +53,16 @@ th{
     color: rgb(160, 1, 1);
 
 }
+
+#erreur{
+    border: 2px solid  rgb(0, 17, 19);
+    border-radius: 6px;
+    width: 20%;
+    margin: 2rem auto;
+    padding: 3rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color:rgb(245, 234, 232) ;
+    color: rgb(160, 1, 1);
+
+}
