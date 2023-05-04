@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 h1{
     padding-top: 3rem;
@@ -19,8 +19,9 @@ tr{
 
 th{
 
-    width: 9rem;
+    width: 15rem;
     height: 2.7rem;
+    padding: 0.5rem 1.5rem;
 }
 
 .dark{
@@ -43,7 +44,7 @@ th{
     width: 20%;
     margin: 2rem auto;
     padding: 3rem 2.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     background-color:rgb(232, 245, 241) ;
     color: rgb(160, 1, 1);
@@ -60,9 +61,15 @@ th{
     width: 20%;
     margin: 2rem auto;
     padding: 3rem 2.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     background-color:rgb(245, 234, 232) ;
     color: rgb(160, 1, 1);
 
+}
+
+.image{
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
 }

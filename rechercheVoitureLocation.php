@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["admin_email"] )&& !isset($_SESSION["admin_mdp"]))
+{
+	header("location:authentification.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +22,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Louer Une Auto</a>
+            <a class="navbar-brand" href="index_content_admin.php">Louer Une Auto</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Acceuil</a>
+                        <a class="nav-link active" aria-current="page" href="index_content_admin.php">Acceuil</a>
                     </li>
                     
 
@@ -32,8 +40,8 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="affichageVoitures.php">Afficher voitures </a></li>
                         <li><a class="dropdown-item" href="formulaire_voiture.php">Inserer voiture</a></li>
-                        <li><a class="dropdown-item" href="formulaire_modifier_voiture.php">Modifier Voitures</a></li>
-                        <li><a class="dropdown-item" href="#">Supprimer voiture</a></li>
+                        <li><a class="dropdown-item" href="formulaire_modifier_voiture.php">Modifier Voiture</a></li>
+                        <li><a class="dropdown-item" href="formulaire_supprimer_voiture.php">Supprimer voiture</a></li>
 
                     </ul>
                     </li>
@@ -47,7 +55,7 @@
                             <li><a class="dropdown-item" href="affichageClient.php">Afficher clients </a></li>
                             <li><a class="dropdown-item" href="formulaire_client.php">Inserer client</a></li>
                             <li><a class="dropdown-item" href="formulaire_modifier_client.php">Modifier clients</a></li>
-                            <li><a class="dropdown-item" href="#">Supprimer client</a></li>
+                            <li><a class="dropdown-item" href="formulaire_supprimer_client.php">Supprimer client</a></li>
 
                         </ul>
                     </li>
@@ -58,19 +66,21 @@
                         Gestion Locations
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Afficher Locations </a></li>
-                            <li><a class="dropdown-item" href="#">Inserer Location</a></li>
-                            <li><a class="dropdown-item" href="#">Modifier Locations</a></li>
-                            <li><a class="dropdown-item" href="#">Supprimer Location</a></li>
+                            <li><a class="dropdown-item" href="affichageLocation.php">Afficher Locations </a></li>
+                            <li><a class="dropdown-item" href="formulaireLocation.php">Inserer Location</a></li>
+                            <li><a class="dropdown-item" href="formulaire_rechercheClientLocation.php">Recherche de clients</a></li>
+                            <li><a class="dropdown-item" href="formulaire_rechercheVoitureLocation.php">Recherche de voitures</a></li>
 
                         </ul>
                     </li>
-
+                    <li class="nav-item" id="logout">
+                        <a class="nav-link active" aria-current="page" href="logOut.php" >Log Out</a>
+                    </li>
 
                 </ul>
             </div>
         </div>
-    </nav> 
+    </nav>
  <?php 
     include "connexion.php";
     if(isset($_POST["ajouter"])){

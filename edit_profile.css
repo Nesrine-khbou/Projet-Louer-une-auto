@@ -1,0 +1,185 @@
+#profile{
+    background-color: whitesmoke;
+    border: 1px solid rgba(0, 79, 68, 0.841);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    width: 60%;
+}
+
+#prof_header_sec{
+    margin-bottom: 4rem;
+}
+
+#prof_header_sec p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: gray;
+    margin-left: 2.5rem;
+}
+
+#prof_header h1{
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color:  rgb(0, 29, 25);
+}
+
+#prof_header a{
+    background-color: white;
+    padding: 0.5rem 2rem;
+    margin-right: 2rem;
+    border-radius: 25px;
+    box-shadow: 2px 4px 8px rgba(143, 143, 143, 0.687) ;
+}
+
+#prof_header p{
+    margin: 0;
+    font-size: 1.5rem;
+    color:  rgb(0, 29, 25);
+}
+
+#profile_pic{
+    margin-left: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+#profile_pic p{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color:  rgb(0, 29, 25);
+    margin-bottom: 2rem;
+}
+
+#edit_pic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#edit_pic label{
+    color:  rgba(0, 46, 40, 0.841) ;
+    font-size: 1.5rem;
+}
+
+#edit_pic_a{
+    color:  rgba(0, 46, 40, 0.841) ;
+    margin: 0;
+    padding: 0.7rem 4rem;
+    font-size: 1.5rem;
+}
+
+#edit_pic img {
+    height: 13rem;
+    width: 13rem;
+    margin: 0;
+    margin-right: 4rem;
+    padding: 0.05rem;
+    border-radius: 200px;
+    border: 2px solid  rgb(0, 29, 25);
+    box-shadow: 2px 4px 8px rgba(143, 143, 143, 0.687) ;
+}
+
+form{
+    position: relative;
+    margin: 5rem auto;
+    margin-left: 3rem;
+}
+
+label {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.data{
+    background-color: white;
+    box-shadow: 2px 4px 8px rgba(143, 143, 143, 0.744) ;
+    border-radius: 25px;
+    border-color: transparent;
+    height: 3rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+input {
+    background-color: white;
+    box-shadow: 2px 4px 8px rgba(143, 143, 143, 0.744) ;
+    border-radius: 25px;
+    border-color: transparent;
+    height: 3rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.inline_2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.inline_2 li {
+    margin-left: 4rem;
+}
+
+.inline_2 input{
+    width: 25rem;
+}
+
+.inline_1{
+    margin-bottom: 1rem;
+}
+
+.inline_1 li {
+    margin-left: 4rem;
+}
+
+.inline_1 input{
+    width: 50rem;
+}
+
+#telephone_input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#preTel{
+    width: 5rem;
+    margin-right: 1rem;
+}
+
+#tel{
+    width: 18rem;
+}
+
+#edit_save{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+#edit{
+    background-color: rgba(0, 46, 40, 0.841)  ;
+    padding: 0.7rem 6rem;
+    font-size: 1.6rem;
+    color:  white;
+    border-radius: 25px;
+    box-shadow: 2px 4px 8px rgba(143, 143, 143, 0.687) ;
+    margin-right: 2rem;
+}
+
+#save{
+    background-color: white;
+    padding: 0.7rem 6rem;
+    font-size: 1.6rem;
+    color:  rgb(0, 29, 25);
+    border-radius: 25px;
+    box-shadow: 2px 4px 8px rgba(143, 143, 143, 0.687) ;
+}
